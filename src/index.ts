@@ -16,6 +16,7 @@ const DEFAULTS: Required<LoggerOptions> = {
   deterministic: false,
   service: "",
   blackList: [],
+  developmentFormat: false,
 };
 
 interface LogExtra {
@@ -28,8 +29,6 @@ interface LogTemplate {
   error: (extra?: LogExtra) => void;
   notFound: (resource: string, extra?: LogExtra) => void;
 }
-
-const isDevelopment = (): boolean => process.env.NODE_ENV === "development";
 
 export class LoggerService {
   private readonly winstonLogger: winston.Logger;
@@ -231,7 +230,9 @@ export class LoggerService {
       defaultMeta: { service: this.options.service },
       transports: [
         new winston.transports.Console({
-          format: isDevelopment() ? developmentFormat : baseFormat,
+          format: this.options.developmentFormat
+            ? developmentFormat
+            : baseFormat,
         }),
       ],
     });

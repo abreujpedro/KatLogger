@@ -10,4 +10,5 @@ export interface LoggerOptions {
   deterministic: boolean;
   service: string;
   blackList: Array<string>;
+  developmentFormat: boolean;
 }
