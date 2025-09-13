@@ -1,0 +1,112 @@
+# Node / JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+out/
+lib/
+*.tsbuildinfo
+
+# TypeScript
+*.d.ts.map
+*.d.ts.tmp
+
+# Logs
+logs/
+*.log
+.log
+debug.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.*.local
+.env.local
+.env.production
+.env.development
+
+# Coverage
+coverage/
+.nyc_output/
+coverage-final.json
+
+# Test / temp
+tmp/
+temp/
+*.tmp
+*.temp
+.vscode-test/
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Docker
+.Dockerfile.swp
+docker-compose.override.yml
+docker-compose.*.yml
+
+# npm pack
+*.tgz
+
+# Editor swap / backups
+*.swp
+*.swo
+
+# Parcel / Vite / Next / Nuxt / Gatsby etc caches
+.cache/
+.next/
+.nuxt/
+.cache-loader/
+.parcel-cache/
+dist-ssr/
+
+# Storybook
+.out/
+.storybook/
+
+# Misc
+public/ # opcional, remova se você mantém arquivos públicos no repo
+coverage-report/ # se usar relatório separado
+
+# Local node binaries
+node_modules/.bin/
+
+# Lockfiles generated for CI reproducibility (opcional)
+# pnpm-lock.yaml
+
+# If you use Docker builder cache (optional)
+.docker/
+
+# If using IDE-specific run configs
+.run/
+
+# Husky (hooks) — keep if you want CI hooks tracked, remover se criar local-only
+.husky/_/
+

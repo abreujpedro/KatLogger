@@ -1,0 +1,9 @@
+import stringify, { configure, StringifyOptions } from "safe-stable-stringify";
+
+export const customStringify = (config: StringifyOptions): typeof stringify =>
+  configure({
+    circularValue: "Circular",
+    deterministic: config.deterministic,
+    maximumDepth: config.maximumDepth,
+    maximumBreadth: config.maximumBreadth,
+  });
