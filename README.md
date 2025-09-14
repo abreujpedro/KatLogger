@@ -28,7 +28,7 @@ Com **yarn**:
 yarn add kat-logger
 ```
 
-🔧 Usage
+## 🔧 Usage
 
 ```ts
 import { LoggerService } from "kat-logger";
