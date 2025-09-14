@@ -41,7 +41,7 @@ const logger = new LoggerService({
   maxLogValueLength: 200,
   maximumDepth: 5,
   maximumBreadth: 100,
-  circularValue: "[CircularRef]",
+  circularValue: "Circular",
   deterministic: true,
   service: "teste",
   blackList: ["password"],
