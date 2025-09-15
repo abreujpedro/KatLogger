@@ -106,3 +106,55 @@ The logger includes ready-to-use templates for common situations:
   "x": { "a": "Circular", "abc": "*****des" }
 }
 ```
+
+## 🔨 Methods
+
+### `setContext(contextName: string): void`
+
+Sets a **context name** for the logger instance.  
+The context is automatically **prefixed** to every log message, helping identify the module or service where the log originated.
+
+A common usage is to pass the class constructor name (e.g., in a **use case** or service class), so each class has its own log context automatically.
+
+**Example:**
+
+```ts
+class CreateUserUseCase {
+  private readonly logger = new LoggerService();
+
+  constructor() {
+    this.logger.setContext(this.constructor.name);
+  }
+
+  execute() {
+    this.logger.info("Executing business logic...");
+  }
+}
+
+new CreateUserUseCase().execute();
+
+// Output:
+{"level":"info","message":"CreateUserUseCase: Executing business logic...", ...}
+```
+
+### `setDefaultExtra(extra: LogExtra): void`
+
+Merges new key/value pairs into the **default extra fields**.  
+These fields are automatically added to every log message, unless overridden.  
+If the same key already exists, it will be **overwritten** with the new value.
+
+**Example:**
+
+```ts
+logger.setDefaultExtra({ app: "my-api", version: "1.2.0" });
+logger.info("Server ready");
+
+// Output:
+{
+  "level": "info",
+  "message": "PaymentService: Server ready",
+  "app": "my-api",
+  "version": "1.2.0",
+  ...
+}
+```
