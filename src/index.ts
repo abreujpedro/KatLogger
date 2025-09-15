@@ -225,7 +225,7 @@ export class LoggerService {
     );
 
     return winston.createLogger({
-      level: process.env.LOG_LEVEL || this.options.logLevel,
+      level: this.options.logLevel,
       format: baseFormat,
       defaultMeta: { service: this.options.service },
       transports: [
